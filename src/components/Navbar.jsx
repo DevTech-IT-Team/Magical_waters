@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import logo from '../assets/Gemini_Generated_Image_mg8rznmg8rznmg8r-removebg-preview.png'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -39,16 +40,10 @@ const Navbar = () => {
             whileTap={{ scale: 0.98 }}
           >
             <img
-              src="/Gemini_Generated_Image_mg8rznmg8rznmg8r-removebg-preview.png"
+              src={logo}
               alt="Magical Waters Logo"
-              className="h-10 w-auto object-contain"
+              className="h-14 w-auto object-contain"
             />
-            <div className="hidden sm:flex flex-col leading-tight">
-              <span className="text-sm font-semibold text-slate-900 tracking-wide">
-                Magical Waters
-              </span>
-              <span className="text-xs text-slate-500">Calm water healing</span>
-            </div>
           </motion.a>
           
           {/* Desktop Menu */}

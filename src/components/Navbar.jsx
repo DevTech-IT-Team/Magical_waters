@@ -42,7 +42,7 @@ const Navbar = () => {
             <img
               src={logo}
               alt="Magical Waters Logo"
-              className="h-14 w-auto object-contain"
+              className="h-28 w-auto object-contain"
             />
           </motion.a>
           

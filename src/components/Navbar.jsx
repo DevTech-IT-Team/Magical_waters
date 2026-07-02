@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import logo from '../assets/Gemini_Generated_Image_mg8rznmg8rznmg8r-removebg-preview.png'
+import logo from '../assets/logo.png'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -15,17 +15,16 @@ const Navbar = () => {
   }, [])
 
   const navLinks = [
-    { href: '#home', label: 'Home' },
-    { href: '#about', label: 'Our Story' },
-    { href: '#services', label: 'Offerings' },
-    { href: '#contact', label: 'Connect' }
+    { href: '/#home', label: 'Home' },
+    { href: '/#about', label: 'Our Story' },
+    { href: '/#services', label: 'Offerings' },
+    { href: '/#contact', label: 'Connect' }
   ]
 
   return (
-    <motion.nav 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? 'bg-[#F7F4F0]/90 backdrop-blur-md shadow-md border-b border-blue-100/20' : 'bg-white/30 backdrop-blur-sm'
-      }`}
+    <motion.nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-[#F7F4F0]/90 backdrop-blur-md shadow-md border-b border-blue-100/20' : 'bg-white/30 backdrop-blur-sm'
+        }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
@@ -34,7 +33,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <motion.a
-            href="#home"
+            href="/#home"
             className="flex items-center gap-4 group"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
@@ -42,19 +41,18 @@ const Navbar = () => {
             <img
               src={logo}
               alt="Magical Waters Logo"
-              className="h-28 w-auto object-contain"
+              className="h-36 w-auto object-contain"
             />
           </motion.a>
-          
+
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link, index) => (
               <motion.a
                 key={link.href}
                 href={link.href}
-                className={`relative text-sm tracking-wider font-medium transition-colors ${
-                  scrolled ? 'text-[#3B82F6] hover:text-[#1E3A8A]' : 'text-[#3B82F6] hover:text-[#1E3A8A]'
-                }`}
+                className={`relative text-sm tracking-wider font-medium transition-colors ${scrolled ? 'text-[#3B82F6] hover:text-[#1E3A8A]' : 'text-[#3B82F6] hover:text-[#1E3A8A]'
+                  }`}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
@@ -69,10 +67,10 @@ const Navbar = () => {
                 />
               </motion.a>
             ))}
-            
+
             {/* CTA Button */}
             <motion.a
-              href="#booknow"
+              href="/#booknow"
               className="px-6 py-2.5 bg-[#3B82F6] text-white rounded-full text-sm font-medium tracking-wider hover:bg-[#1E3A8A] transition-colors"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -94,7 +92,7 @@ const Navbar = () => {
             <motion.div className="w-5 h-5 flex flex-col justify-center items-center">
               <motion.span
                 className="w-5 h-0.5 bg-current block absolute"
-                animate={{ 
+                animate={{
                   rotate: isOpen ? 45 : 0,
                   y: isOpen ? 0 : -4
                 }}
@@ -107,7 +105,7 @@ const Navbar = () => {
               />
               <motion.span
                 className="w-5 h-0.5 bg-current block absolute"
-                animate={{ 
+                animate={{
                   rotate: isOpen ? -45 : 0,
                   y: isOpen ? 0 : 4
                 }}
@@ -143,9 +141,9 @@ const Navbar = () => {
                   {link.label}
                 </motion.a>
               ))}
-              
+
               <motion.a
-                href="#booknow"
+                href="/#booknow"
                 className="block mt-4 py-3 px-4 bg-[#3B82F6] text-white text-center rounded-full font-medium"
                 onClick={() => setIsOpen(false)}
                 initial={{ opacity: 0, y: 20 }}
